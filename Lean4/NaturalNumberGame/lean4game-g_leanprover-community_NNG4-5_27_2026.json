@@ -13,7 +13,13 @@
     "MyNat.add_zero",
     "Add",
     "MyNat.add_succ",
-    "MyNat.succ_eq_add_one"
+    "MyNat.succ_eq_add_one",
+    "induction",
+    "MyNat.zero_add",
+    "MyNat.succ_add",
+    "MyNat.add_comm",
+    "MyNat.add_assoc",
+    "MyNat.add_right_comm"
   ],
   "readIntro": false,
   "data": {
@@ -123,8 +129,78 @@
         "help": []
       },
       "readIntro": false
+    },
+    "Addition": {
+      "1": {
+        "code": "induction n with d hd;\nrw[add_zero];\nrfl;\nrw[add_succ]\nrw[hd]\nrfl\n",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 7,
+            "selectionStartColumn": 1,
+            "positionLineNumber": 7,
+            "positionColumn": 1
+          }
+        ],
+        "help": [
+          4
+        ]
+      },
+      "2": {
+        "code": "induction b with d hd\nrw[add_zero]\nrw[add_zero]\nrfl\nrw[add_succ]\nrw[add_succ]\nrw[hd]\nrfl\n",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 9,
+            "selectionStartColumn": 1,
+            "positionLineNumber": 9,
+            "positionColumn": 1
+          }
+        ],
+        "help": []
+      },
+      "3": {
+        "code": "induction b with d hd\nrw[add_zero]\nrw[zero_add]\nrfl\nrw[succ_add]\nrw[add_succ]\nrw[hd]\nrfl\n",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 9,
+            "selectionStartColumn": 1,
+            "positionLineNumber": 9,
+            "positionColumn": 1
+          }
+        ],
+        "help": []
+      },
+      "4": {
+        "code": "induction c with d hd\nrw[add_zero]\nrw[add_zero]\nrfl\nrw[add_succ]\nrw[add_succ]\nrw[add_succ]\nrw[hd]\nrfl\n",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 10,
+            "selectionStartColumn": 1,
+            "positionLineNumber": 10,
+            "positionColumn": 1
+          }
+        ],
+        "help": []
+      },
+      "5": {
+        "code": "rw[add_assoc]\nrw[add_assoc]\nrw[add_comm b c]\nrfl\n",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 5,
+            "selectionStartColumn": 1,
+            "positionLineNumber": 5,
+            "positionColumn": 1
+          }
+        ],
+        "help": []
+      },
+      "readIntro": false
     }
   },
   "difficulty": 2,
-  "typewriterMode": false
+  "typewriterMode": true
 }
