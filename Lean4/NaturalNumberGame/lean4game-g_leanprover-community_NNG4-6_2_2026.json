@@ -42,7 +42,8 @@
     "MyNat.pow_two",
     "MyNat.pow_add",
     "MyNat.mul_pow",
-    "MyNat.pow_pow"
+    "MyNat.pow_pow",
+    "MyNat.add_sq"
   ],
   "readIntro": false,
   "data": {
@@ -449,13 +450,13 @@
         "help": []
       },
       "9": {
-        "code": "repeat rw[two_eq_succ_one]\nrepeat rw[pow_succ]\nrepeat rw[pow_one]\nrw [← two_eq_succ_one]\ninduction b with d hd\nrepeat rw[add_zero]\nrepeat rw[mul_zero]\nrepeat rw[add_zero]\nrfl\nrepeat rw[add_succ]\nrepeat rw[mul_succ]\nrepeat rw[succ_mul]\nrw[hd]\nnth_rewrite 3 [two_mul]\nnth_rewrite 2 [add_comm a d]\nrw[← succ_add d a]\nnth_rewrite 2 [← add_assoc]\nnth_rewrite 2 [← add_assoc]\n",
-        "completed": false,
+        "code": "rw [pow_two, pow_two, pow_two]\nrw [add_right_comm]\nrw [mul_add, add_mul, add_mul]\nrw [two_mul, add_mul]\nrw [mul_comm b a]\nrw [← add_assoc, ← add_assoc]\nrfl\n",
+        "completed": true,
         "selections": [
           {
-            "selectionStartLineNumber": 19,
+            "selectionStartLineNumber": 8,
             "selectionStartColumn": 1,
-            "positionLineNumber": 19,
+            "positionLineNumber": 8,
             "positionColumn": 1
           }
         ],
